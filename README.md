@@ -62,5 +62,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_config_maps"></a> [config\_maps](#output\_config\_maps) | Config map outputs |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

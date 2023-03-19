@@ -57,7 +57,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_config_maps"></a> [config\_maps](#input\_config\_maps) | Config map parameters | <pre>map(object({<br>    namespace              = string<br>    labels                 = optional(map(string), {})<br>    annotations            = optional(map(string), {})<br>    use_existing_namespace = optional(bool, false)<br>    data                   = optional(map(string), {})<br>    binary_data            = optional(map(string), {})<br>  }))</pre> | n/a | yes |
+| <a name="input_config_maps"></a> [config\_maps](#input\_config\_maps) | Config map parameters | <pre>map(object({<br>    namespace              = string<br>    labels                 = optional(map(string), {})<br>    annotations            = optional(map(string), {})<br>    use_existing_namespace = optional(bool, false)<br>    data                   = optional(map(string), {})<br>    binary_data            = optional(map(string), {})<br>  }))</pre> | `{}` | no |
 | <a name="input_namespaces"></a> [namespaces](#input\_namespaces) | Namespaces parameters | <pre>map(object({<br>    labels      = optional(map(string), {})<br>    annotations = optional(map(string), {})<br>  }))</pre> | `{}` | no |
 
 ## Outputs

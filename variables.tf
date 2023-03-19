@@ -19,4 +19,5 @@ variable "config_maps" {
     data                   = optional(map(string), {})
     binary_data            = optional(map(string), {})
   }))
+  default = {}
 }

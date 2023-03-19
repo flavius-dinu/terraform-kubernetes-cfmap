@@ -1,9 +1,7 @@
-# Terraform Module Template
-
-This template can be used to easily start building your terraform modules.
+# Terraform Kubernetes ConfigMap
 
 ## Workflows
-In this template there are 3 github actions workflows:
+In this module there are 3 github actions workflows:
 - **auto_tag.yaml**
     - this workflow will run whenever a merge to the main branch occurs
     - it will by default tag your repository with a Patch bump (version format is: vMajor.Minor.Patch)
@@ -29,7 +27,40 @@ This will fix all the problems related to the hooks mentioned above.
 ## Taking advantage of Terraform-Docs
 
 You will need to add the following in **README.md** in order to auto-populate the documentation with terraform-docs.
-```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > 1.3.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.18.1 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.18.1 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [kubernetes_config_map.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/config_map) | resource |
+| [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_config_maps"></a> [config\_maps](#input\_config\_maps) | Config map parameters | <pre>map(object({<br>    namespace              = string<br>    labels                 = optional(map(string), {})<br>    annotations            = optional(map(string), {})<br>    use_existing_namespace = optional(bool, false)<br>    data                   = optional(map(string), {})<br>    binary_data            = optional(map(string), {})<br>  }))</pre> | n/a | yes |
+| <a name="input_namespaces"></a> [namespaces](#input\_namespaces) | Namespaces parameters | <pre>map(object({<br>    labels      = optional(map(string), {})<br>    annotations = optional(map(string), {})<br>  }))</pre> | `{}` | no |
+
+## Outputs
+
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-```

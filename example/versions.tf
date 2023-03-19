@@ -1,13 +1,9 @@
-# terraform {
-#     required_providers {
-#       aws = {
-#         version = ">= 2.7.0"
-#         source = "hashicorp/aws"
-#       }
-#     }
-#     backend "s3" {
-#       bucket = "mybucket"
-#       key    = "path/to/my/key"
-#       region = "us-east-1"
-#     }
-# }
+terraform {
+  required_version = "> 1.3.0"
+  required_providers {
+    kubernetes = {
+      version = ">= 2.18.1"
+      source  = "hashicorp/kubernetes"
+    }
+  }
+}
